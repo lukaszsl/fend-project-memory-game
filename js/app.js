@@ -6,16 +6,8 @@ const CARDS = document.querySelectorAll('.card');
 /*
  * Create an array of cards
  */
-function createArray(nodeList) {
-	let array = [];
-	nodeList.forEach(function(element) {
-		array.push(element);
-	});
-
-	return array;
-}
-
-const cardsList = createArray(CARDS);
+const cardsList = Array.from(CARDS);
+console.log(cardsList);
 
 /*
  * Display the cards on the page
@@ -24,8 +16,7 @@ const cardsList = createArray(CARDS);
  *   - add each card's HTML to the page
  */
 
-
-
+shuffle(cardsList);
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
