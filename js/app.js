@@ -4,11 +4,28 @@
 const CARDS = document.querySelectorAll('.card');
 
 /*
+ * Create an array of cards
+ */
+function createArray(nodeList) {
+	let array = [];
+	nodeList.forEach(function(element) {
+		array.push(element);
+	});
+
+	return array;
+}
+
+const cardsList = createArray(CARDS);
+
+/*
  * Display the cards on the page
- *   - shuffle the list of cards using the provided "shuffle" method below
+ *   - shuffle the list of cards using the provided "shuffle" method
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+
+
+
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
