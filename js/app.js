@@ -18,6 +18,20 @@ console.log(cardsList);
 
 shuffle(cardsList);
 
+addShuffledCards();
+
+/*
+ * Add shuffled cards to the DOM
+ */
+function addShuffledCards() {
+	let i = 0;
+	for(const card of CARDS) {
+		card.innerHTML = cardsList[i].innerHTML;
+		console.log(card);
+		i++;
+	}
+}
+
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
 	var currentIndex = array.length, temporaryValue, randomIndex;
