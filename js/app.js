@@ -1,11 +1,9 @@
-/*
- * Create a list that holds all of your cards
- */
+
+//Create a list that holds all of your cards
 const CARDS = document.querySelectorAll('.card');
 
-/*
- * Create an array of cards
- */
+
+//Create an array of cards
 const cardsList = Array.from(CARDS);
 console.log(cardsList);
 
@@ -20,9 +18,8 @@ shuffle(cardsList);
 
 addShuffledCards();
 
-/*
- * Add shuffled cards to the DOM
- */
+
+//Add shuffled cards to the DOM
 function addShuffledCards() {
 	let i = 0;
 	for(const card of CARDS) {
