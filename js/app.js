@@ -59,7 +59,15 @@ function shuffle(array) {
  document.querySelector('.deck').addEventListener('click', function(event) {
 	 console.log(event);
 	 showCard(event);
+	 addToList(event);
  });
+
+ let listOfOpenCards = [];
+
+// Add the open card to the list of open cards
+ function addToList(card) {
+	 listOfOpenCards.push(card);
+ }
 
  function showCard(card) {
 	 console.log(card.target.className);
