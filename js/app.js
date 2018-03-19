@@ -53,18 +53,37 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
- 
+ let openCardsList = [];
 
  document.querySelector('.deck').addEventListener('click', function(event) {
  	showCard(event);
+	addToList(event);
+	console.log(openCardsList[0].target.innerHTML);
+
+	if(openCardsList.length > 1) {
+		if(openCardsList[0].target.innerHTML === openCardsList[1].target.innerHTML) {
+			console.log('match');
+			ifMatch(openCardsList);
+		} else {
+			console.log('do not much');
+
+		}
+			openCardsList = [];
+	}
  });
 
 // Add the open card to the list of open cards
  function addToList(card) {
-	 listOfOpenCards.push(card);
+	 openCardsList.push(card);
  }
 
-	 function showCard(card) {
+	function showCard(card) {
 		 card.target.classList.toggle('open');
 		 card.target.classList.toggle('show');
-	 }
+	}
+
+	function ifMatch(cards) {
+		for (card of cards) {
+			card.target.classList.toggle('match');
+		}
+	}
