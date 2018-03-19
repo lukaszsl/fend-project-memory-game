@@ -1,11 +1,13 @@
 
+const deck = document.querySelector('.deck');
+
 //Create a list that holds all of your cards
-const CARDS = document.querySelectorAll('.card');
+const cards = document.getElementsByClassName('card');
 
 
 //Create an array of cards
-const cardsList = Array.from(CARDS);
-console.log(cardsList);
+let cardsList = Array.from(cards);
+
 
 /*
  * Display the cards on the page
@@ -14,18 +16,15 @@ console.log(cardsList);
  *   - add each card's HTML to the page
  */
 
-shuffle(cardsList);
 
+cardsList = shuffle(cardsList);
 addShuffledCards();
-
 
 //Add shuffled cards to the DOM
 function addShuffledCards() {
-	let i = 0;
-	for(const card of CARDS) {
-		card.innerHTML = cardsList[i].innerHTML;
-		console.log(card);
-		i++;
+	deck.innerHTML = '';
+	for (let i = 0; i < cardsList.length; i++) {
+		deck.innerHTML += cardsList[i].outerHTML;
 	}
 }
 
@@ -54,23 +53,18 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
-
+ 
 
  document.querySelector('.deck').addEventListener('click', function(event) {
-	 console.log(event);
-	 showCard(event);
-	 addToList(event);
+ 	showCard(event);
  });
-
- let listOfOpenCards = [];
 
 // Add the open card to the list of open cards
  function addToList(card) {
 	 listOfOpenCards.push(card);
  }
 
- function showCard(card) {
-	 console.log(card.target.className);
-	 card.target.classList.toggle('open');
-	 card.target.classList.toggle('show');
- }
+	 function showCard(card) {
+		 card.target.classList.toggle('open');
+		 card.target.classList.toggle('show');
+	 }
