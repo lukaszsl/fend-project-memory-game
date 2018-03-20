@@ -1,5 +1,6 @@
 
 const deck = document.querySelector('.deck');
+const moves = document.querySelector('.moves');
 
 //Create a list that holds all of your cards
 const cards = document.getElementsByClassName('card');
@@ -52,6 +53,9 @@ function shuffle(array) {
 	*/
 
 let openCardsList = [];
+let moveCounter = 0;
+
+moves.innerText = moveCounter;
 
 deck.addEventListener('click', function(event) {
 	showCard(event); // Show card after click
@@ -68,6 +72,7 @@ deck.addEventListener('click', function(event) {
 		}
 			openCardsList = [];
 	}
+	countMoves(event);
 });
 
 // Add the open card to the list of open cards
@@ -75,23 +80,30 @@ function addToList(card) {
 	openCardsList.push(card);
 }
 
-	function showCard(card) {
-		 card.target.classList.toggle('open');
-		 card.target.classList.toggle('show');
-	}
+function showCard(card) {
+	card.target.classList.toggle('open');
+	card.target.classList.toggle('show');
+}
 
-	function ifMatch(cards) {
-		for (card of cards) {
-			card.target.classList.toggle('match');
-		}
+function ifMatch(cards) {
+	for (card of cards) {
+		card.target.classList.toggle('match');
 	}
+}
 
 // Hide cards(with delay) if not match
-	function ifDontMatch(cards) {
-		setTimeout(function() {
-			for (card of cards) {
-				card.target.classList.remove('open');
-				card.target.classList.remove('show');
-			}
-		}, 700);
+function ifDontMatch(cards) {
+	setTimeout(function() {
+		for (card of cards) {
+			card.target.classList.remove('open');
+			card.target.classList.remove('show');
+		}
+	}, 700);
+}
+
+function countMoves(card) {
+	if (card.target.classList[0] === 'card') {
+		moveCounter++;
+		moves.innerText = moveCounter;
 	}
+}
