@@ -60,18 +60,7 @@ moves.innerText = moveCounter;
 deck.addEventListener('click', function(event) {
 	showCard(event); // Show card after click
 	addToList(event); // Add card to the list to compare
-
-// Compare open cards
-	if(openCardsList.length > 1) {
-		if(openCardsList[0].target.innerHTML === openCardsList[1].target.innerHTML) {
-			console.log('match');
-			ifMatch(openCardsList);
-		} else {
-			console.log('do not much');
-			ifDontMatch(openCardsList);
-		}
-			openCardsList = [];
-	}
+	compareCards(); // Compare two open cards
 	countMoves(event);
 });
 
@@ -83,6 +72,19 @@ function addToList(card) {
 function showCard(card) {
 	card.target.classList.toggle('open');
 	card.target.classList.toggle('show');
+}
+
+function compareCards() {
+	if(openCardsList.length > 1) {
+		if(openCardsList[0].target.innerHTML === openCardsList[1].target.innerHTML) {
+			console.log('match');
+			ifMatch(openCardsList);
+		} else {
+			console.log('do not much');
+			ifDontMatch(openCardsList);
+		}
+			openCardsList = [];
+	}
 }
 
 function ifMatch(cards) {
