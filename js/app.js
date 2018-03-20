@@ -66,7 +66,7 @@ function shuffle(array) {
 			ifMatch(openCardsList);
 		} else {
 			console.log('do not much');
-
+			ifDontMatch(openCardsList);
 		}
 			openCardsList = [];
 	}
@@ -86,4 +86,14 @@ function shuffle(array) {
 		for (card of cards) {
 			card.target.classList.toggle('match');
 		}
+	}
+
+// Hide cards(with delay) if not match
+	function ifDontMatch(cards) {
+		setTimeout(function() {
+			for (card of cards) {
+				card.target.classList.remove('open');
+				card.target.classList.remove('show');
+			}
+		}, 700);
 	}
