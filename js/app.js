@@ -53,11 +53,11 @@ function shuffle(array) {
 
 let openCardsList = [];
 
-document.querySelector('.deck').addEventListener('click', function(event) {
-	showCard(event);
-	addToList(event);
-	console.log(openCardsList[0].target.innerHTML);
+deck.addEventListener('click', function(event) {
+	showCard(event); // Show card after click
+	addToList(event); // Add card to the list to compare
 
+// Compare open cards
 	if(openCardsList.length > 1) {
 		if(openCardsList[0].target.innerHTML === openCardsList[1].target.innerHTML) {
 			console.log('match');
