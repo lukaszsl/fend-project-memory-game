@@ -1,4 +1,5 @@
 
+const container = document.querySelector('.container');
 const deck = document.querySelector('.deck');
 const moves = document.querySelector('.moves');
 
