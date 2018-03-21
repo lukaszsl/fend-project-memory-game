@@ -112,9 +112,27 @@ h1 {
  * Styles for the Modal
  */
 
- .modal {
-	 display: flex;
-	 justify-content: center;
-	 width: 100%;
-	 height: 100%;
- }
+.modal {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.modal__header {
+	font-size: 2.5em;
+}
+
+.modal__message {
+	font-size: 1.5em;
+}
+
+.modal__button {
+	width: 200px;
+	height: 50px;
+	font-size: 1em;
+	background-color: #59c9ba;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+}
