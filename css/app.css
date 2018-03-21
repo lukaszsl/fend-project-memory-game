@@ -119,6 +119,11 @@ h1 {
 	height: 100%;
 }
 
+.modal__icon {
+	font-size: 70px;
+	color: #59c9ba;
+}
+
 .modal__header {
 	font-size: 2.5em;
 }
