@@ -1,4 +1,4 @@
-
+const container = document.querySelector('.container');
 const deck = document.querySelector('.deck');
 const moves = document.querySelector('.moves');
 
@@ -108,4 +108,9 @@ function countMoves(card) {
 		moveCounter++;
 		moves.innerText = moveCounter;
 	}
+}
+
+//TODO: Create function which display scores in the end of the game
+function finalMessage() {
+	container.style.display = 'none';
 }
