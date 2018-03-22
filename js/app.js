@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const deck = document.querySelector('.deck');
+const modal = document.querySelector('.modal');
 const moves = document.querySelector('.moves');
 
 //Create a list that holds all of your cards
@@ -110,7 +111,8 @@ function countMoves(card) {
 	}
 }
 
-//TODO: Create function which display scores in the end of the game
+//Function which display modal with scores in the end of the game
 function finalMessage() {
 	container.style.display = 'none';
+	modal.style.display = 'flex';
 }
