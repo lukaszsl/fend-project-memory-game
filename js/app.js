@@ -9,6 +9,7 @@ const cards = document.getElementsByClassName('card');
 
 //Create an array of cards
 let cardsList = Array.from(cards);
+let matchCounter = 0;
 
 /*
 	* Display the cards on the page
@@ -64,6 +65,11 @@ deck.addEventListener('click', function(event) {
 	addToList(event); // Add card to the list to compare
 	compareCards(); // Compare two open cards
 	countMoves(event);
+
+	// Display final message if all cards match
+	if (ifAllMatch()) {
+		finalMessage();
+	}
 });
 
 // Add the open card to the list of open cards
@@ -110,6 +116,19 @@ function countMoves(card) {
 		moveCounter++;
 		moves.innerText = moveCounter;
 	}
+}
+
+// Check if all cards match
+function ifAllMatch() {
+	for (card of cards) {
+		if (card.className === 'card open show match') matchCounter++;
+	}
+
+		if (matchCounter === 16) return true;
+		else {
+			matchCounter = 0;
+			return false;
+		}
 }
 
 //Function which display modal with scores in the end of the game
