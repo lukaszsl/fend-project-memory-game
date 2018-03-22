@@ -3,6 +3,7 @@ const deck = document.querySelector('.deck');
 const modal = document.querySelector('.modal');
 const moves = document.querySelector('.moves');
 const movesNumber = document.querySelector('.moves-number');
+const playAgainBtn =document.querySelector('.modal__button');
 
 //Create a list that holds all of your cards
 const cards = document.getElementsByClassName('card');
@@ -71,6 +72,8 @@ deck.addEventListener('click', function(event) {
 		finalMessage();
 	}
 });
+
+playAgainBtn.addEventListener('click', newGame());
 
 // Add the open card to the list of open cards
 function addToList(card) {
