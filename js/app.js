@@ -10,6 +10,7 @@ const cards = document.getElementsByClassName('card');
 //Create an array of cards
 let cardsList = Array.from(cards);
 let matchCounter = 0;
+let moveCounter = 0;
 
 /*
 	* Display the cards on the page
@@ -18,8 +19,15 @@ let matchCounter = 0;
 	*   - add each card's HTML to the page
 	*/
 
-cardsList = shuffle(cardsList);
-addShuffledCards();
+newGame();
+
+function newGame() {
+	moveCounter = 0;
+	cardsList = shuffle(cardsList);
+	addShuffledCards();
+	container.style.display = 'flex';
+	modal.style.display = 'none';
+}
 
 //Add shuffled cards to the DOM
 function addShuffledCards() {
@@ -56,9 +64,6 @@ function shuffle(array) {
 	*/
 
 let openCardsList = [];
-let moveCounter = 0;
-
-moves.innerText = moveCounter;
 
 deck.addEventListener('click', function(event) {
 	showCard(event); // Show card after click
