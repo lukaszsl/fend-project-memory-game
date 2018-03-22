@@ -2,6 +2,7 @@ const container = document.querySelector('.container');
 const deck = document.querySelector('.deck');
 const modal = document.querySelector('.modal');
 const moves = document.querySelector('.moves');
+const movesNumber = document.querySelector('.moves-number');
 
 //Create a list that holds all of your cards
 const cards = document.getElementsByClassName('card');
@@ -115,4 +116,5 @@ function countMoves(card) {
 function finalMessage() {
 	container.style.display = 'none';
 	modal.style.display = 'flex';
+	movesNumber.innerText = moveCounter;
 }
