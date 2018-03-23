@@ -3,7 +3,8 @@ const deck = document.querySelector('.deck');
 const modal = document.querySelector('.modal');
 const moves = document.querySelector('.moves');
 const movesNumber = document.querySelector('.moves-number');
-const playAgainBtn =document.querySelector('.modal__button');
+const starsNumber = document.querySelector('.stars-number');
+const playAgainBtn = document.querySelector('.modal__button');
 const restartBtn = document.querySelector('.restart');
 
 //Create a list that holds all of your cards
@@ -156,4 +157,5 @@ function finalMessage() {
 	container.style.display = 'none';
 	modal.style.display = 'flex';
 	movesNumber.innerText = moveCounter;
+//TODO: append stars to final message
 }
