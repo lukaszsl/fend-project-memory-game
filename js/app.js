@@ -12,6 +12,7 @@ const cards = document.getElementsByClassName('card');
 let cardsList = Array.from(cards);
 let matchCounter = 0;
 let moveCounter = 0;
+let openCardsList = [];
 
 /*
 	* Display the cards on the page
@@ -20,14 +21,32 @@ let moveCounter = 0;
 	*   - add each card's HTML to the page
 	*/
 
-newGame();
+	newGame();
+
+	deck.addEventListener('click', function(event) {
+		showCard(event); // Show card after click
+		addToList(event); // Add card to the list to compare
+		compareCards(); // Compare two open cards
+		countMoves(event);
+
+		// Display final message if all cards match
+		if (ifAllMatch()) {
+			finalMessage();
+		}
+	});
+
+	playAgainBtn.addEventListener('click', function() {
+		newGame();
+	});
 
 function newGame() {
 	moveCounter = 0;
+	moves.innerText = moveCounter;
 	cardsList = shuffle(cardsList);
 	addShuffledCards();
 	container.style.display = 'flex';
 	modal.style.display = 'none';
+
 }
 
 //Add shuffled cards to the DOM
@@ -64,23 +83,6 @@ function shuffle(array) {
 	*    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
 	*/
 
-let openCardsList = [];
-
-deck.addEventListener('click', function(event) {
-	showCard(event); // Show card after click
-	addToList(event); // Add card to the list to compare
-	compareCards(); // Compare two open cards
-	countMoves(event);
-
-	// Display final message if all cards match
-	if (ifAllMatch()) {
-		finalMessage();
-	}
-});
-
-playAgainBtn.addEventListener('click', function() {
-	newGame();
-});
 
 // Add the open card to the list of open cards
 function addToList(card) {
@@ -130,13 +132,16 @@ function countMoves(card) {
 
 // Check if all cards match
 function ifAllMatch() {
+	matchCounter = 0;
+
 	for (card of cards) {
 		if (card.className === 'card open show match') matchCounter++;
 	}
-
-		if (matchCounter === 16) return true;
+	
+		if (matchCounter === 16) {
+			return true;
+		}
 		else {
-			matchCounter = 0;
 			return false;
 		}
 }
