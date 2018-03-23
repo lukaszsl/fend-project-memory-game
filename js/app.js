@@ -4,6 +4,7 @@ const modal = document.querySelector('.modal');
 const moves = document.querySelector('.moves');
 const movesNumber = document.querySelector('.moves-number');
 const playAgainBtn =document.querySelector('.modal__button');
+const restartBtn = document.querySelector('.restart');
 
 //Create a list that holds all of your cards
 const cards = document.getElementsByClassName('card');
@@ -33,6 +34,10 @@ let openCardsList = [];
 		if (ifAllMatch()) {
 			finalMessage();
 		}
+	});
+
+	restartBtn.addEventListener('click', function() {
+		newGame();
 	});
 
 	playAgainBtn.addEventListener('click', function() {
@@ -137,7 +142,7 @@ function ifAllMatch() {
 	for (card of cards) {
 		if (card.className === 'card open show match') matchCounter++;
 	}
-	
+
 		if (matchCounter === 16) {
 			return true;
 		}
