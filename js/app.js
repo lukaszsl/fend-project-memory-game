@@ -79,7 +79,7 @@ deck.addEventListener('click', function(event) {
 });
 
 playAgainBtn.addEventListener('click', function() {
-	newGame()
+	newGame();
 });
 
 // Add the open card to the list of open cards
