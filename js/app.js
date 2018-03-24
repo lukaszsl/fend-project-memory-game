@@ -6,6 +6,7 @@ const movesNumber = document.querySelector('.moves-number');
 const starsNumber = document.querySelector('.stars-number');
 const playAgainBtn = document.querySelector('.modal__button');
 const restartBtn = document.querySelector('.restart');
+const stars = document.querySelector('.stars');
 
 //Create a list that holds all of your cards
 const cards = document.getElementsByClassName('card');
@@ -15,6 +16,7 @@ let cardsList = Array.from(cards);
 let matchCounter = 0;
 let moveCounter = 0;
 let openCardsList = [];
+let countMovesVar;
 
 /*
 	* Display the cards on the page
@@ -29,8 +31,9 @@ let openCardsList = [];
 		showCard(event); // Show card after click
 		addToList(event); // Add card to the list to compare
 		compareCards(); // Compare two open cards
-		countMoves(event);
-
+		countMovesVar = countMoves(event);
+		starsCounter(countMovesVar);
+		stars.children[2].firstChild.className
 		// Display final message if all cards match
 		if (ifAllMatch()) {
 			finalMessage();
@@ -50,6 +53,7 @@ function newGame() {
 	moves.innerText = moveCounter;
 	cardsList = shuffle(cardsList);
 	addShuffledCards();
+	resetStarsCounter();
 	container.style.display = 'flex';
 	modal.style.display = 'none';
 
@@ -134,6 +138,7 @@ function countMoves(card) {
 		moveCounter++;
 		moves.innerText = moveCounter;
 	}
+	return moveCounter;
 }
 
 // Check if all cards match
@@ -158,4 +163,24 @@ function finalMessage() {
 	modal.style.display = 'flex';
 	movesNumber.innerText = moveCounter;
 //TODO: append stars to final message
+}
+
+function starsCounter(movesNumber) {
+	switch(movesNumber) {
+		case 20:
+			stars.children[2].firstChild.className = 'fa fa-star-o';
+			break;
+		case 30:
+			stars.children[1].firstChild.className = 'fa fa-star-o';
+			break;
+		case 40:
+			stars.children[0].firstChild.className = 'fa fa-star-o';
+			break;
+	}
+}
+
+function resetStarsCounter() {
+	for (star of stars.children) {
+		star.firstChild.className = 'fa fa-star';
+	}
 }
