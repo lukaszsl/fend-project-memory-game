@@ -165,6 +165,26 @@ h1 {
 		margin-bottom: 2%;
 		font-size: 20px;
 	}
+
+	.modal__icon {
+		font-size: 120px;
+	}
+
+	.modal__header {
+		font-size: 3em;
+	}
+
+	.modal__message {
+		font-size: 2em;
+		margin: 10px;
+	}
+
+	.modal__button {
+		width: 300px;
+		height: 75px;
+		margin: 20px auto;
+		font-size: 25px;
+	}
 }
 
 /* landscape */
@@ -212,6 +232,15 @@ h1 {
 		height: 60px;
 		width: 60px;
 	}
+
+	.modal__header {
+		font-size: 1.5em;
+	}
+
+	.modal__message {
+		font-size: 1.0em;
+		margin: 5px;
+	}
 }
 
 /* landscape */
@@ -239,5 +268,14 @@ h1 {
 	.deck .card {
 		height: 43px;
 		width: 43px;
+	}
+
+	.modal__header {
+		font-size: 1.5em;
+	}
+
+	.modal__message {
+		font-size: 1.5em;
+    margin: 3px;
 	}
 }
