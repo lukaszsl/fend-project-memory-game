@@ -96,7 +96,9 @@ function shuffle(array) {
 
 // Add the open card to the list of open cards
 function addToList(card) {
-	openCardsList.push(card);
+	if (card.target.classList[0] === 'card') {
+		openCardsList.push(card);
+	}
 }
 
 function showCard(card) {
