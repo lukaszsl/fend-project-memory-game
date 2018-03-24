@@ -1,6 +1,6 @@
 const container = document.querySelector('.container');
 const deck = document.querySelector('.deck');
-const modal = document.querySelector('.modal');
+const modal = document.querySelector('.modal--final');
 const moves = document.querySelector('.moves');
 const movesNumber = document.querySelector('.moves-number');
 const starsNumber = document.querySelector('.stars-number');
@@ -53,6 +53,7 @@ let seconds = 0, minutes = 0, t;
 
 function newGame() {
 	moveCounter = 0;
+	openCardsList = [];
 	moves.innerText = moveCounter;
 	cardsList = shuffle(cardsList);
 	addShuffledCards();
