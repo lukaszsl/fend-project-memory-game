@@ -8,6 +8,7 @@ const playAgainBtn = document.querySelector('.modal__button');
 const restartBtn = document.querySelector('.restart');
 const stars = document.querySelector('.stars');
 const time = document.querySelector('.time');
+const showTime = document.querySelector('.show-time');
 
 //Create a list that holds all of your cards
 const cards = document.getElementsByClassName('card');
@@ -171,6 +172,7 @@ function finalMessage() {
 	modal.style.display = 'flex';
 	movesNumber.innerText = moveCounter;
 	starsNumber.innerHTML = stars.outerHTML;
+	showTime.innerText = time.innerText;
 }
 
 function starsCounter(movesNumber) {
