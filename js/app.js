@@ -162,7 +162,7 @@ function finalMessage() {
 	container.style.display = 'none';
 	modal.style.display = 'flex';
 	movesNumber.innerText = moveCounter;
-//TODO: append stars to final message
+	starsNumber.innerHTML = stars.outerHTML;
 }
 
 function starsCounter(movesNumber) {
