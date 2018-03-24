@@ -63,7 +63,6 @@ function newGame() {
 	stopTimer();
 	resetTime();
 	timer();
-
 }
 
 //Add shuffled cards to the DOM
