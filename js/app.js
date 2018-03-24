@@ -7,6 +7,7 @@ const starsNumber = document.querySelector('.stars-number');
 const playAgainBtn = document.querySelector('.modal__button');
 const restartBtn = document.querySelector('.restart');
 const stars = document.querySelector('.stars');
+const time = document.querySelector('.time');
 
 //Create a list that holds all of your cards
 const cards = document.getElementsByClassName('card');
@@ -17,6 +18,7 @@ let matchCounter = 0;
 let moveCounter = 0;
 let openCardsList = [];
 let countMovesVar;
+let seconds = 0, minutes = 0, t;
 
 /*
 	* Display the cards on the page
@@ -56,6 +58,9 @@ function newGame() {
 	resetStarsCounter();
 	container.style.display = 'flex';
 	modal.style.display = 'none';
+	stopTimer();
+	resetTime();
+	timer();
 
 }
 
@@ -152,6 +157,7 @@ function ifAllMatch() {
 	}
 
 		if (matchCounter === 16) {
+			clearTimeout(t);
 			return true;
 		}
 		else {
@@ -185,4 +191,27 @@ function resetStarsCounter() {
 	for (star of stars.children) {
 		star.firstChild.className = 'fa fa-star';
 	}
+}
+
+function timer() {
+	t = setTimeout(function () {
+		seconds++;
+		if (seconds >= 60) {
+			seconds = 0;
+			minutes++;
+		}
+
+		time.textContent = (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+		timer();
+	}, 1000);
+}
+
+function stopTimer() {
+	clearTimeout(t);
+}
+
+function resetTime() {
+	seconds = 0;
+	minutes = 0;
 }

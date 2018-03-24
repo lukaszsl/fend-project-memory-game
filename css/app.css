@@ -108,6 +108,11 @@ h1 {
 	cursor: pointer;
 }
 
+.time {
+	display: inline-block;
+	margin: 0 2%;
+}
+
 /*
  * Styles for the Modal
  */
