@@ -192,9 +192,6 @@ function starsCounter(movesNumber) {
 		case 30:
 			stars.children[1].firstChild.className = 'fa fa-star-o';
 			break;
-		case 40:
-			stars.children[0].firstChild.className = 'fa fa-star-o';
-			break;
 	}
 }
 
