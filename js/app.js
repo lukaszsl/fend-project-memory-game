@@ -1,9 +1,11 @@
-const container = document.querySelector('.container');
+const game = document.querySelector('.game');
 const deck = document.querySelector('.deck');
-const modal = document.querySelector('.modal--final');
+const modalFinal = document.querySelector('.modal--final');
+const modalWelcome = document.querySelector('.modal--welcome');
 const moves = document.querySelector('.moves');
 const movesNumber = document.querySelector('.moves-number');
 const starsNumber = document.querySelector('.stars-number');
+const startGameBtn = document.querySelector('.modal--welcome__button');
 const playAgainBtn = document.querySelector('.modal__button');
 const restartBtn = document.querySelector('.restart');
 const stars = document.querySelector('.stars');
@@ -28,7 +30,13 @@ let seconds = 0, minutes = 0, t;
 	*   - add each card's HTML to the page
 	*/
 
-	newGame();
+	modalWelcome.style.display='flex';
+	game.style.display = 'none';
+	modalFinal.style.display = 'none';
+
+	startGameBtn.addEventListener('click', function() {
+		newGame();
+	});
 
 	deck.addEventListener('click', function(event) {
 		showCard(event); // Show card after click
@@ -36,7 +44,7 @@ let seconds = 0, minutes = 0, t;
 		compareCards(); // Compare two open cards
 		countMovesVar = countMoves(event);
 		starsCounter(countMovesVar);
-		stars.children[2].firstChild.className
+		// stars.children[2].firstChild.className
 		// Display final message if all cards match
 		if (ifAllMatch()) {
 			finalMessage();
@@ -58,8 +66,9 @@ function newGame() {
 	cardsList = shuffle(cardsList);
 	addShuffledCards();
 	resetStarsCounter();
-	container.style.display = 'flex';
-	modal.style.display = 'none';
+	game.style.display = 'flex';
+	modalWelcome.style.display='none';
+	modalFinal.style.display = 'none';
 	stopTimer();
 	resetTime();
 	timer();
@@ -168,8 +177,8 @@ function ifAllMatch() {
 
 //Function which display modal with scores in the end of the game
 function finalMessage() {
-	container.style.display = 'none';
-	modal.style.display = 'flex';
+	game.style.display = 'none';
+	modalFinal.style.display = 'flex';
 	movesNumber.innerText = moveCounter;
 	starsNumber.innerHTML = stars.outerHTML;
 	showTime.innerText = time.innerText;

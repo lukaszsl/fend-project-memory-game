@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Matching Game</title>
+	<title>Memeory Game</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="memory game">
 	<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -11,10 +11,24 @@
 
 </head>
 <body>
-
-	<div class="container">
+<!-- WELCOME -->
+	<div class="modal modal--welcome">
+		<div class="container">
+			<i class="fa fa-globe"></i>
+			<h2 class="modal--welcome__header">Welcome to the Memory Game! Let's play!</h2>
+			<h3>Rules:</h3>
+			<ul clsass="rules">
+				<li><i class="fa fa-star"></i></li>
+				<li><i class="fa fa-star"></i></li>
+				<li><i class="fa fa-star"></i></li>
+			</ul>
+			<button class="modal--welcome__button">Start game!</button>
+		</div>
+	</div>
+<!-- GAME -->
+	<div class="container game">
 		<header>
-			<h1>Matching Game</h1>
+			<h1>Memory Game</h1>
 		</header>
 
 		<section class="score-panel">
@@ -86,7 +100,7 @@
 			</li>
 		</ul>
 	</div>
-
+<!-- THE END -->
 	<div class="modal modal--final">
 		<div class="container">
 			<i class="fa fa-check-circle modal__icon"></i>
