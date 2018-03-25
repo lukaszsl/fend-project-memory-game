@@ -54,6 +54,14 @@ h3 {
 	cursor: pointer;
 }
 
+.not-clicable {
+	pointer-events: none;
+}
+
+.clicable {
+	pointer-events: auto;
+}
+
 /*
  * Styles for the Welcome Modal
  */

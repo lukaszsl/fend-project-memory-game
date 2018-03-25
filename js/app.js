@@ -113,6 +113,7 @@ function shuffle(array) {
 function addToList(card) {
 	if (card.target.classList[0] === 'card') {
 		openCardsList.push(card);
+		card.target.style.pointerEvents = "none";
 	}
 }
 
@@ -137,6 +138,7 @@ function compareCards() {
 function ifMatch(cards) {
 	for (card of cards) {
 		card.target.classList.toggle('match');
+		card.target.style.pointerEvents = "none";
 	}
 }
 
@@ -146,12 +148,13 @@ function ifDontMatch(cards) {
 		for (card of cards) {
 			card.target.classList.remove('open');
 			card.target.classList.remove('show');
+			card.target.style.pointerEvents = "auto";
 		}
 	}, 700);
 }
 
 function countMoves(card) {
-	if (card.target.classList[0] === 'card') {
+	if (card.target.classList[0] === 'card' && openCardsList[0] !== openCardsList[1]) {
 		moveCounter++;
 		moves.innerText = moveCounter;
 	}
