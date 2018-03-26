@@ -3,8 +3,8 @@
 ## Table of Contents
 
 * [Rules](#rules)
-* [How to play](#howToPlay)
-* [How I made it](#howImadeIt)
+* [How to play](#how_to_play)
+* [How I made it](#how_i_made_it)
 
 
 ## Rules
@@ -29,4 +29,4 @@
 
 ## How I made it
 
-To develope this game I have used three basic web languages: HTML, CSS, Java Script.
+To developed this game I have used three basic web languages: HTML, CSS, Java Script.
