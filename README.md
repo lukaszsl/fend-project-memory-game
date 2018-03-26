@@ -3,8 +3,8 @@
 ## Table of Contents
 
 * [Rules](#rules)
-* [How to play](#How_to_play)
-* [How I made it](#How_I_made_it)
+* [How to play](#How to play)
+* [How I made it](#How I made it)
 
 
 ## Rules
