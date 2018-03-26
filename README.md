@@ -3,8 +3,8 @@
 ## Table of Contents
 
 * [Rules](#rules)
-* [How to play](#how_to_play)
-* [How I made it](#how_i_made_it)
+* [How to play](#How_to_play)
+* [How I made it](#How_I_made_it)
 
 
 ## Rules
@@ -16,7 +16,7 @@
 * After 20 moves you will lose one star and after another 10 you'll lose second
 
 
-## How to play
+## How_to_play
 
 * You will be welcome with start screen
 * Click on "Start game" button
@@ -27,6 +27,6 @@
 * Click on "Play again" button to have fun again
 
 
-## How I made it
+## How_I_made_it
 
 To developed this game I have used three basic web languages: HTML, CSS, Java Script.
