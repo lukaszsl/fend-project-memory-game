@@ -44,19 +44,18 @@ let seconds = 0, minutes = 0, t;
 		compareCards(); // Compare two open cards
 		countMovesVar = countMoves(event);
 		starsCounter(countMovesVar);
-		// stars.children[2].firstChild.className
 		// Display final message if all cards match
 		if (ifAllMatch()) {
 			finalMessage();
 		}
 	});
 
-	restartBtn.addEventListener('click', function() {
-		newGame();
+	restartBtn.addEventListener('click', function(event) {
+		newGame(event);
 	});
 
-	playAgainBtn.addEventListener('click', function() {
-		newGame();
+	playAgainBtn.addEventListener('click', function(event) {
+		newGame(event);
 	});
 
 function newGame() {
@@ -71,7 +70,7 @@ function newGame() {
 	modalFinal.style.display = 'none';
 	stopTimer();
 	resetTime();
-	timer();
+	deck.addEventListener('click', firstCardClicked);
 }
 
 //Add shuffled cards to the DOM
@@ -216,6 +215,14 @@ function timer() {
 
 		timer();
 	}, 1000);
+	// prevent start timer() again
+	deck.removeEventListener('click', firstCardClicked);
+}
+
+function firstCardClicked(event) {
+	if (event.target.classList[0] === 'card') {
+		timer();
+	}
 }
 
 function stopTimer() {
@@ -225,4 +232,5 @@ function stopTimer() {
 function resetTime() {
 	seconds = 0;
 	minutes = 0;
+	time.innerHTML = '00:00';
 }
