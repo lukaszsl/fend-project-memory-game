@@ -16,7 +16,7 @@
 * After 20 moves you will lose one star and after another 10 you'll lose second
 
 
-## How_to_play
+## How to play
 
 * You will be welcome with start screen
 * Click on "Start game" button
@@ -27,6 +27,6 @@
 * Click on "Play again" button to have fun again
 
 
-## How_I_made_it
+## How I made it
 
 To developed this game I have used three basic web languages: HTML, CSS, Java Script.
