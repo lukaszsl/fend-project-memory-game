@@ -2,13 +2,13 @@
 
 ## Try it!
 
-[Live link](#https://lukaszsl.github.io/fend-project-memory-game/)
+[Live link](https://lukaszsl.github.io/fend-project-memory-game/)
 
 ## Table of Contents
 
 * [Rules](#rules)
-* [How-to-play](#How-to-play)
-* [How-I-made-it](#How-I-made-it)
+* [How to play](#how-to-play)
+* [How I made it](#how-i-made-it)
 
 
 ## Rules
@@ -20,7 +20,7 @@
 * After 20 moves you will lose one star and after another 10 you'll lose second
 
 
-## How-to-play
+## How to play
 
 * You will be welcome with start screen
 * Click on "Start game" button
@@ -31,6 +31,6 @@
 * Click on "Play again" button to have fun again
 
 
-## How-I-made-it
+## How I made it
 
 To developed this game I have used three basic web languages: HTML, CSS, Java Script.
