@@ -1,5 +1,9 @@
 # Memory Game Project
 
+## Try it!
+
+[Live link](#https://lukaszsl.github.io/fend-project-memory-game/)
+
 ## Table of Contents
 
 * [Rules](#rules)
