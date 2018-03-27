@@ -2,7 +2,7 @@
 
 ## Try it!
 
-[Live link](https://lukaszsl.github.io/fend-project-memory-game/)
+[Live link](https://lukaszsl.github.io/memory-game/)
 
 ## Table of Contents
 
